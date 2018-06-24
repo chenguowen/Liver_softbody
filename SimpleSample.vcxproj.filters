@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="GLSL_wrapper">
+      <UniqueIdentifier>{8f825afe-dea7-42c0-9801-4965ae2eb82a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Rotation">
+      <UniqueIdentifier>{b4fb786b-9e81-4050-bd44-a6ad684c2569}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Rotation\header">
+      <UniqueIdentifier>{4390658a-1439-4652-a7b1-dec0093ad8df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Loadobj">
+      <UniqueIdentifier>{9d02cdcc-330f-4cde-8ba2-7d5c8945ca3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utils">
+      <UniqueIdentifier>{a38a14fc-8ad8-41a4-9ecb-f1da1e5fe068}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utils\header">
+      <UniqueIdentifier>{da90b2d9-b77b-4dbb-8c66-5a956ab3c77d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Simulation">
+      <UniqueIdentifier>{7d42fbe9-e99d-49ca-b6f5-973abd17596c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Mutiple_View">
+      <UniqueIdentifier>{ec6ae24d-7a85-40c2-a968-0c267a1e2e3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Loadobj\header">
+      <UniqueIdentifier>{bd325bea-a87b-4a01-a83b-8b01c7596cf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders_File">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="Shaders_File\Normal">
+      <UniqueIdentifier>{56b8feba-f8ff-4c75-b248-5d50ec5bfcb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders_File\Conventional">
+      <UniqueIdentifier>{d5fbcef3-99cc-48d8-86e4-c7e0fbd0fc7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Softbody">
+      <UniqueIdentifier>{601b6f7c-a206-4414-88f3-427a65d35eb5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main__IV_Multi_Lens_glsl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Motion_name.cpp">
+      <Filter>Header Files\Rotation</Filter>
+    </ClCompile>
+    <ClCompile Include="Motion_nameVector.cpp">
+      <Filter>Header Files\Rotation</Filter>
+    </ClCompile>
+    <ClCompile Include="controler.cpp">
+      <Filter>Header Files\Rotation</Filter>
+    </ClCompile>
+    <ClCompile Include="Rotation_Control.cpp">
+      <Filter>Header Files\Rotation</Filter>
+    </ClCompile>
+    <ClCompile Include="GL\glew.c">
+      <Filter>GLSL_wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Glsl_loader.cpp">
+      <Filter>GLSL_wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Octree_cgw.cpp">
+      <Filter>Header Files\Loadobj</Filter>
+    </ClCompile>
+    <ClCompile Include="Loadobj_sponge.cpp">
+      <Filter>Header Files\Loadobj</Filter>
+    </ClCompile>
+    <ClCompile Include="Screen_Shot.cpp">
+      <Filter>Header Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="time_fps.cpp">
+      <Filter>Header Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="txtread.cpp">
+      <Filter>Header Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="particlelib.cpp">
+      <Filter>Header Files\Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="Multiple_View.cpp">
+      <Filter>Header Files\Mutiple_View</Filter>
+    </ClCompile>
+    <ClCompile Include="Draw_C.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\SoftBody\BmpLoader.cpp">
+      <Filter>Softbody</Filter>
+    </ClCompile>
+    <ClCompile Include="common\SoftBody\cooking.cpp">
+      <Filter>Softbody</Filter>
+    </ClCompile>
+    <ClCompile Include="common\SoftBody\glRenderer.cpp">
+      <Filter>Softbody</Filter>
+    </ClCompile>
+    <ClCompile Include="common\SoftBody\MeshHash.cpp">
+      <Filter>Softbody</Filter>
+    </ClCompile>
+    <ClCompile Include="common\SoftBody\MySoftBody.cpp">
+      <Filter>Softbody</Filter>
+    </ClCompile>
+    <ClCompile Include="common\SoftBody\ObjMesh.cpp">
+      <Filter>Softbody</Filter>
+    </ClCompile>
+    <ClCompile Include="common\Stream.cpp">
+      <Filter>Softbody</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FragmentProgram.glsl">
+      <Filter>Shaders_File\Normal</Filter>
+    </None>
+    <None Include="VertexProgram.glsl">
+      <Filter>Shaders_File\Normal</Filter>
+    </None>
+    <None Include="Shader\Fragment_conventional.glsl">
+      <Filter>Shaders_File\Conventional</Filter>
+    </None>
+    <None Include="Shader\Vertex_conventional.glsl">
+      <Filter>Shaders_File\Conventional</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Glsl_loader.h">
+      <Filter>GLSL_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="GL\glew.h">
+      <Filter>GLSL_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="controler.h">
+      <Filter>Header Files\Rotation\header</Filter>
+    </ClInclude>
+    <ClInclude Include="Motion_name.h">
+      <Filter>Header Files\Rotation\header</Filter>
+    </ClInclude>
+    <ClInclude Include="Motion_nameVector.h">
+      <Filter>Header Files\Rotation\header</Filter>
+    </ClInclude>
+    <ClInclude Include="Rotation_Control.h">
+      <Filter>Header Files\Rotation\header</Filter>
+    </ClInclude>
+    <ClInclude Include="time_fps.h">
+      <Filter>Header Files\Utils\header</Filter>
+    </ClInclude>
+    <ClInclude Include="txtread.h">
+      <Filter>Header Files\Utils\header</Filter>
+    </ClInclude>
+    <ClInclude Include="Screen_Shot.h">
+      <Filter>Header Files\Utils\header</Filter>
+    </ClInclude>
+    <ClInclude Include="particlelib.h">
+      <Filter>Header Files\Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="Multiple_View.h">
+      <Filter>Header Files\Mutiple_View</Filter>
+    </ClInclude>
+    <ClInclude Include="Draw_C.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadObj.h">
+      <Filter>Header Files\Loadobj\header</Filter>
+    </ClInclude>
+    <ClInclude Include="Octree_cgw.h">
+      <Filter>Header Files\Loadobj\header</Filter>
+    </ClInclude>
+    <ClInclude Include="common\SoftBody\BmpLoader.h">
+      <Filter>Softbody</Filter>
+    </ClInclude>
+    <ClInclude Include="common\SoftBody\cooking.h">
+      <Filter>Softbody</Filter>
+    </ClInclude>
+    <ClInclude Include="common\SoftBody\glRenderer.h">
+      <Filter>Softbody</Filter>
+    </ClInclude>
+    <ClInclude Include="common\SoftBody\MeshHash.h">
+      <Filter>Softbody</Filter>
+    </ClInclude>
+    <ClInclude Include="common\SoftBody\MySoftBody.h">
+      <Filter>Softbody</Filter>
+    </ClInclude>
+    <ClInclude Include="common\SoftBody\ObjMesh.h">
+      <Filter>Softbody</Filter>
+    </ClInclude>
+    <ClInclude Include="common\Stream.h">
+      <Filter>Softbody</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

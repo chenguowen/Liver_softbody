@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3F995F3D-6035-4F00-8BE9-1D756CDCCF2D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>IV_Multi_Lens_glsl_LeapMotion_MSAA_Mipmap</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    </LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    </LinkIncremental>
+    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">bin;$(FxCopDir);$(ExecutablePath)</ExecutablePath>
+    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">bin;$(FxCopDir);$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>common/Cooking/include;common/;$(VC_IncludePath);$(WindowsSDK_IncludePath);Physx\Physics\include;include;Physx\Foundation\include;Physx\PhysXLoader\include;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;Libs;Physx\lib\Win32;$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>common/Cooking/include;common/;$(VC_IncludePath);$(WindowsSDK_IncludePath);Physx\Physics\include;include;Physx\Foundation\include;Physx\PhysXLoader\include;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;Libs;Physx\lib\Win32;$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include;glm-0.9.5.4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>Libs</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)SimpleSample.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>Leap.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <PreBuildEvent>
+      <Command>copy bin\*.dll "$(OutDir)"
+copy *.cg "$(OutDir)"
+copy *.glsl "$(OutDir)"</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>DEL "$(OutDir)"\*.log 
+DEL "$(OutDir)"\*.tlog
+DEL "$(OutDir)"\*.obj </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>include;glm-0.9.5.4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <OpenMPSupport>false</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>Libs</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>Leap.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <PreBuildEvent>
+      <Command>copy bin\*.dll "$(OutDir)"
+copy *.cg "$(OutDir)"
+copy *.glsl "$(OutDir)"</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>DEL "$(OutDir)"\*.log 
+DEL "$(OutDir)"\*.tlog
+DEL "$(OutDir)"\*.obj </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="common\SoftBody\BmpLoader.cpp" />
+    <ClCompile Include="common\SoftBody\cooking.cpp" />
+    <ClCompile Include="common\SoftBody\glRenderer.cpp" />
+    <ClCompile Include="common\SoftBody\MeshHash.cpp" />
+    <ClCompile Include="common\SoftBody\MySoftBody.cpp" />
+    <ClCompile Include="common\SoftBody\ObjMesh.cpp" />
+    <ClCompile Include="common\Stream.cpp" />
+    <ClCompile Include="controler.cpp" />
+    <ClCompile Include="Draw_C.cpp" />
+    <ClCompile Include="Glsl_loader.cpp" />
+    <ClCompile Include="GL\glew.c" />
+    <ClCompile Include="Loadobj_sponge.cpp" />
+    <ClCompile Include="Motion_name.cpp" />
+    <ClCompile Include="Motion_nameVector.cpp" />
+    <ClCompile Include="Multiple_View.cpp" />
+    <ClCompile Include="Octree_cgw.cpp" />
+    <ClCompile Include="particlelib.cpp" />
+    <ClCompile Include="Rotation_Control.cpp" />
+    <ClCompile Include="Main__IV_Multi_Lens_glsl.cpp" />
+    <ClCompile Include="Screen_Shot.cpp" />
+    <ClCompile Include="time_fps.cpp" />
+    <ClCompile Include="txtread.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FragmentProgram.glsl" />
+    <None Include="Shader\Fragment_conventional.glsl" />
+    <None Include="Shader\Vertex_conventional.glsl" />
+    <None Include="VertexProgram.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common\SoftBody\BmpLoader.h" />
+    <ClInclude Include="common\SoftBody\cooking.h" />
+    <ClInclude Include="common\SoftBody\glRenderer.h" />
+    <ClInclude Include="common\SoftBody\MeshHash.h" />
+    <ClInclude Include="common\SoftBody\MySoftBody.h" />
+    <ClInclude Include="common\SoftBody\ObjMesh.h" />
+    <ClInclude Include="common\Stream.h" />
+    <ClInclude Include="controler.h" />
+    <ClInclude Include="Draw_C.h" />
+    <ClInclude Include="Glsl_loader.h" />
+    <ClInclude Include="GL\glew.h" />
+    <ClInclude Include="LoadObj.h" />
+    <ClInclude Include="Motion_name.h" />
+    <ClInclude Include="Motion_nameVector.h" />
+    <ClInclude Include="Multiple_View.h" />
+    <ClInclude Include="Octree_cgw.h" />
+    <ClInclude Include="particlelib.h" />
+    <ClInclude Include="Rotation_Control.h" />
+    <ClInclude Include="Screen_Shot.h" />
+    <ClInclude Include="time_fps.h" />
+    <ClInclude Include="txtread.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

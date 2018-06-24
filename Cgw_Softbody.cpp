@@ -1,6 +1,6 @@
 #include "Cgw_Softbody.h" //  
 // 
-// Ä¬ÈÏ³õÊ¼»¯º¯Êý // 
+// é»˜è®¤åˆå§‹åŒ–å‡½æ•° // 
 // 
 My_softbody_class::My_softbody_class()
 {
@@ -9,7 +9,7 @@ My_softbody_class::My_softbody_class()
 	sprintf_s(objFileName, "%s.obj", fileName);
 }
 
-///   ³õÊ¼»¯ 
+///   åˆå§‹åŒ– 
 void My_softbody_class::InitNx()
 {
 	// Initialize PhysicsSDK
@@ -17,8 +17,10 @@ void My_softbody_class::InitNx()
 	if (!gPhysicsSDK)    return;  	gPhysicsSDK->setParameter(NX_SKIN_WIDTH, -0.05f); // 
 	// Create a scene
 	NxSceneDesc sceneDesc;  sceneDesc.setToDefault(); // gDefaultGravity
-	sceneDesc.gravity = NxVec3(0, -9, 0); gScene = gPhysicsSDK->createScene(sceneDesc);
-	NxMaterial * defaultMaterial = gScene->getMaterialFromIndex(0); defaultMaterial->setRestitution(0.9f);
+	sceneDesc.gravity = NxVec3(0, -9, 0); 
+	gScene = gPhysicsSDK->createScene(sceneDesc);
+	NxMaterial * defaultMaterial = gScene->getMaterialFromIndex(0); 
+	defaultMaterial->setRestitution(0.9f);
 	defaultMaterial->setStaticFriction(0.1f);                       defaultMaterial->setDynamicFriction(0.1f); //  
 	// 	 Create ground plane
 	NxPlaneShapeDesc PlaneDesc; PlaneDesc.d = 0.0f;
@@ -27,8 +29,9 @@ void My_softbody_class::InitNx()
 	NxBoxShapeDesc BoxDesc; BoxDesc.dimensions = NxVec3(float(size), float(size), float(size));
 	// 
 	NxActorDesc BoxActorDesc; BoxActorDesc.shapes.pushBack(&BoxDesc);
-	BoxActorDesc.body = &BodyDesc; BoxActorDesc.density = 0.10f;
-	BoxActorDesc.globalPose.t = NxVec3(-160.0, 0.0, 0.0); //  
+	BoxActorDesc.body = &BodyDesc;  
+	BoxActorDesc.density = 0.10f;
+	BoxActorDesc.globalPose.t   =  NxVec3(-160.0, 0.0, 0.0); //  
 	gScene->createActor(BoxActorDesc)->userData = (void*)size;
 	// 
 	NxSoftBodyDesc softBodyDesc;   softBodyDesc.particleRadius = 0.10f; 	softBodyDesc.volumeStiffness = 1.0f;
@@ -42,16 +45,16 @@ void My_softbody_class::InitNx()
 	ObjMesh *objMesh = new ObjMesh();
 	// 
 	objMesh->loadFromObjFile(objFileName);
-	loadObj(fileName_2, mesh); // cgw 
+	loadObj(fileName_2, mesh); // cgw // 
 
 	NxMat33 rot ;  // 
 	rot.rotX(NxPiF32);                       softBodyDesc.globalPose.t = NxVec3(1.0f, carHeight, 0.0f);
 	softBodyDesc.globalPose.M = rot;  	     softBodyDesc.stretchingStiffness = stiffness; // 
 	softBodyDesc.dampingCoefficient = 0.99;  softBodyDesc.dampingCoefficient = 1; // 
-	//  Ïògscene×¢²á softbody // 
-	softBody = new MySoftBody(gScene, softBodyDesc, tetFileName, objMesh, 40); 	// ²»ÖªµÀÊ²Ã´ÒâË¼ £¿   
+	//  å‘gsceneæ³¨å†Œ softbody // 
+	softBody = new MySoftBody(gScene, softBodyDesc, tetFileName, objMesh, 40); 	// ä¸çŸ¥é“ä»€ä¹ˆæ„æ€ ï¼Ÿ   
 	gObjMeshes.push_back(objMesh);   	gSoftBodies.pushBack(softBody); //   
-	// ÈíÌå ºÍ ActorÊÇ²¢ÁÐµÄ¹ØÏµ // 
+	// è½¯ä½“ å’Œ Actoræ˜¯å¹¶åˆ—çš„å…³ç³» // 
 	if (gSoftBodies.size() > 0) { gSelectedSoftBody = gSoftBodies[0]->getNxSoftBody(); }
 	else {  gSelectedSoftBody = NULL;}
 	if (gScene->getNbActors() > 0) 	{		gSelectedActor = *gScene->getActors(); }
@@ -82,21 +85,21 @@ void My_softbody_class::RenderCall_Back()
 			NxSoftBody * tmp = (*softBody)->getNxSoftBody();
 			for (int i = 1; i < mesh.faces.size(); i++)
 			{
-				int a = mesh.faces[i].v[0] - 1, b = mesh.faces[i].v[1] - 1, c = mesh.faces[i].v[2] - 1;   // ¶¥µã±àºÅ
+				int a = mesh.faces[i].v[0] - 1, b = mesh.faces[i].v[1] - 1, c = mesh.faces[i].v[2] - 1;   // é¡¶ç‚¹ç¼–å·
 				glBegin(GL_TRIANGLES);
-				glNormal3f(mesh.Normals[a].x, mesh.Normals[a].y, mesh.Normals[a].z);  //  ¶¥µã×ø±ê(x,y,z)
-				glVertex3f(vertexes[3 * a + 0], vertexes[3 * a + 1], vertexes[3 * a + 2]);  //  ¶¥µã×ø±ê(x,y,z)
-				glNormal3f(mesh.Normals[b].x, mesh.Normals[b].y, mesh.Normals[b].z);  //  ¶¥µã×ø±ê(x,y,z)
+				glNormal3f(mesh.Normals[a].x, mesh.Normals[a].y, mesh.Normals[a].z);  //  é¡¶ç‚¹åæ ‡(x,y,z)
+				glVertex3f(vertexes[3 * a + 0], vertexes[3 * a + 1], vertexes[3 * a + 2]);  //  é¡¶ç‚¹åæ ‡(x,y,z)
+				glNormal3f(mesh.Normals[b].x, mesh.Normals[b].y, mesh.Normals[b].z);  //  é¡¶ç‚¹åæ ‡(x,y,z)
 				glVertex3f(vertexes[3 * b + 0], vertexes[3 * b + 1], vertexes[3 * b + 2]);  //  
 
-				glNormal3f(mesh.Normals[c].x, mesh.Normals[c].y, mesh.Normals[c].z);  //  ¶¥µã×ø±ê(x,y,z)
+				glNormal3f(mesh.Normals[c].x, mesh.Normals[c].y, mesh.Normals[c].z);  //  é¡¶ç‚¹åæ ‡(x,y,z)
 				glVertex3f(vertexes[3 * c + 0], vertexes[3 * c + 1], vertexes[3 * c + 2]);  //  
 				glEnd(); //  
 			}
 		}
 	}
 	//glPopMatrix();  //   
-	counter++;  //  »æÖÆ¸ÕÌå /// 
+	counter++;  //  ç»˜åˆ¶åˆšä½“ /// 
 	int nbActors = gScene->getNbActors();
 	NxActor** actors = gScene->getActors();
 	while (nbActors--)
